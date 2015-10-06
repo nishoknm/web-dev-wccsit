@@ -1,8 +1,11 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="default.css">
+    <link rel="stylesheet" type="text/css" href="../default.css">
     <script>
     function keydown(eve) {
         var ele = eve.target;
@@ -19,15 +22,31 @@
 <body>
     <div id="header">
         <div>
-            <img src="images/images.jpg" title="WC-CSIT" />
-            <ul id="sublist">
-                <li><a href="generalInfo.html">General Information</a> | </li>
-                <li><a href="important-dates.html">Important Dates</a> | </li>
-                <li><a href="revieweronline.html">Reviewer Login</a> | </li>
-                <li><a href="onlineregistration.html">Online Registration</a> | </li>
-                <li><a href="guidelines.html">Guidelines</a> | </li>
-                <li><a href="feedback.html">Comments and feedback</a></li>
-            </ul>
+            <img src="../images/images.jpg" title="WC-CSIT" />
+            <div style="float:right;height:50px">
+                <ul id="sublist">
+                    <li><a href="../generalInfo">General Information</a> | </li>
+                    <li><a href="../important-dates">Important Dates</a> | </li>
+                    <li><a href="../revieweronline">Reviewer Login</a> | </li>
+                    <li><a href="../onlineregistration">Online Registration</a> | </li>
+                    <li><a href="../guidelines">Guidelines</a> | </li>
+                    <li><a href="../feedback">Comments and feedback</a></li>
+                </ul>
+                <div id="login">
+                    <?php if(!empty($_SESSION["id"])) : ?>
+                        Logged in as:<?php echo $_SESSION["id"] ?>
+                    <button class="loginoutbutton" name="weblogOff" id="u_0_11"><a href="../utils/logout.php">Logout</a></button>
+                    <?php else : ?>
+                        <div class="login">
+                            <form action="onlineregistered.php" method="post" id="loginout" name="login">
+                                <input type="text" name="email" placeholder="E-mail" class="logininput">
+                                <input type="password" name="password" placeholder="Password" class="logininput">
+                                <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
         <div id="multicolor-bar">
             <div class="col-xs-2 colorblock-1"></div>
@@ -38,12 +57,12 @@
             <div class="col-xs-2 colorblock-6"></div>
         </div>
         <ul id="mainlist">
-            <li><a href="index.html">Home</a> | </li>
-            <li><a href="speakers.html">Keynote Speakers</a> | </li>
-            <li><a href="callpaper.html">Call for paper</a> | </li>
-            <li><a href="majorareas.html">Major Areas</a> | </li>
-            <li><a href="papersubmission.html">Paper Submission</a> | </li>
-            <li><a href="program.html">Conference Program</a></li>
+            <li><a href="../">Home</a> | </li>
+            <li><a href="../speakers">Keynote Speakers</a> | </li>
+            <li><a href="../callpaper">Call for paper</a> | </li>
+            <li><a href="../majorareas">Major Areas</a> | </li>
+            <li><a href="../papersubmission">Paper Submission</a> | </li>
+            <li><a href="../program">Conference Program</a></li>
         </ul>
     </div>
     <div id="container">
@@ -53,62 +72,62 @@
                     <div class="_52lq">Sign Up</div>
                     <div class="_52lr">Fee based on attendee status. !!</div>
                 </div>
-                <form method="post" id="reg" name="reg">
+                <form action="onlineregistered.php" method="post" id="reg" name="reg">
                     <div id="reg_form_box" class="large_form">
                         <div class="clearfix _58mh">
                             <div class="mbm _3-90 lfloat _ohe">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                     <div class="placeholder">First name</div>
-                                    <input type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="fName" type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
                                 </div>
                             </div>
                             <div class="mbm rfloat _ohf">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                     <div class="placeholder">Last name</div>
-                                    <input type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="lName" type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
                                 </div>
                             </div>
                         </div>
                         <div class="mbm">
                             <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                 <div class="placeholder">Email</div>
-                                <input type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                <input name="email" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
                             </div>
                         </div>
                         <div class="mbm" id="u_0_3">
                             <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                 <div class="placeholder">Mobile number</div>
-                                <input type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                <input name="number" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
                             </div>
                         </div>
                         <div class="mbm" id="u_0_5">
                             <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                 <div class="placeholder">Address</div>
-                                <input type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                <input name="address" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
                             </div>
                         </div>
                         <div class="mbm" id="u_0_6">
                             <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                 <select name="attendee" id="attendee" class="inputtext transparent _58ms">
-                                    <option value="">Author</option>
-                                    <option value="12" title="Student">Student</option>
-                                    <option value="50" title="Regular Attendee">Regular Attendee</option>
+                                    <option value="Author">Author</option>
+                                    <option value="Student" title="Student">Student</option>
+                                    <option value="Regular Attendee" title="Regular Attendee">Regular Attendee</option>
                                 </select>
                             </div>
                         </div>
                         <div class="mbm" id="u_0_7">
                             <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                 <div class="placeholder">Company or Organization</div>
-                                <input type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                <input name="comOrg" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
                             </div>
                         </div>
                         <div class="mbm">
                             <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                 <div class="placeholder">New password</div>
-                                <input type="password" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                <input name="password" type="password" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
                             </div>
                         </div>
-                        <div class="mtm _5wa2 _5dbb"><span class="_5k_3"><span class="_5k_2 _5dba"><input type="radio" name="sex" value="1" id="u_0_6"><label class="_52lr">Female</label></span><span class="_5k_2 _5dba"><input type="radio" name="sex" value="2" id="u_0_7"><label class="_52lr">Male</label></span></span><i class="_5dbc _5k_6 img sp_LGqQTdUydKB sx_a32b95"></i><i class="_5dbd _5k_7 img sp_LGqQTdUydKB sx_b4917b"></i></div>
+                        <div class="mtm _5wa2 _5dbb"><span class="_5k_3"><span class="_5k_2 _5dba"><input type="radio" name="sex" value="Female" id="u_0_6"><label class="_52lr">Female</label></span><span class="_5k_2 _5dba"><input type="radio" name="sex" value="Male" id="u_0_7"><label class="_52lr">Male</label></span></span><i class="_5dbc _5k_6 img sp_LGqQTdUydKB sx_a32b95"></i><i class="_5dbd _5k_7 img sp_LGqQTdUydKB sx_b4917b"></i></div>
                         <div class="_52lr" id="u_0_8">
                             <p class="_52lr">By clicking Sign Up, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.</p>
                         </div>
@@ -128,19 +147,19 @@
             <div id="footerbottom">
                 <ul id="footerlist">
                     <li>
-                        <a href=""><img src="images/facebook.png" alt="Facebook" /></a>
+                        <a href=""><img src="../images/facebook.png" alt="Facebook" /></a>
                     </li>
                     <li>
-                        <a href=""><img src="images/linkedin.png" alt="LinkedIn" /></a>
+                        <a href=""><img src="../images/linkedin.png" alt="LinkedIn" /></a>
                     </li>
                     <li>
-                        <a href=""><img src="images/twitter.png" alt="Twitter" /></a>
+                        <a href=""><img src="../images/twitter.png" alt="Twitter" /></a>
                     </li>
                     <li>
-                        <a href=""><img src="images/google.png" alt="Google" /></a>
+                        <a href=""><img src="../images/google.png" alt="Google" /></a>
                     </li>
                     <li>
-                        <a href=""><img src="images/youtube.png" alt="Google" /></a>
+                        <a href=""><img src="../images/youtube.png" alt="Google" /></a>
                     </li>
                 </ul>
             </div>
@@ -149,3 +168,4 @@
 </body>
 
 </html>
+
