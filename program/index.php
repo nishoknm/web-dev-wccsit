@@ -23,14 +23,14 @@ session_start();
                 </ul>
                 <div id="login">
                     <?php if(!empty($_SESSION["id"])) : ?>
-                        Logged in as:
+                        Logged in as :
                         <?php echo $_SESSION["id"] ?>
-                            <button class="loginoutbutton" name="weblogOff" id="u_0_11"><a href="logout.php">Logout</a></button>
+                            <button class="loginoutbutton" name="weblogOff" id="u_0_11"><a href="../logout.php">Logout</a></button>
                             <?php else : ?>
                                 <div class="login">
-                                    <form action="onlineregistered.php" method="post" id="loginout" name="login">
-                                        <input type="text" name="email" placeholder="E-mail" class="logininput">
-                                        <input type="password" name="password" placeholder="Password" class="logininput">
+                                    <form action="../login.php" method="post" id="loginout" name="login">
+                                        <input type="text" name="email" placeholder=" E-mail" class="logininput">
+                                        <input type="password" name="password" placeholder=" Password" class="logininput">
                                         <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
                                     </form>
                                 </div>

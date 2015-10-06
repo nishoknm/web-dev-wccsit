@@ -34,13 +34,13 @@ session_start();
                 </ul>
                 <div id="login">
                     <?php if(!empty($_SESSION["id"])) : ?>
-                        Logged in as:<?php echo $_SESSION["id"] ?>
-                    <button class="loginoutbutton" name="weblogOff" id="u_0_11"><a href="../utils/logout.php">Logout</a></button>
+                        Logged in as : <?php echo $_SESSION["id"] ?>
+                    <button class="loginoutbutton" name="weblogOff" id="u_0_11"><a href="../logout.php">Logout</a></button>
                     <?php else : ?>
                         <div class="login">
-                            <form action="onlineregistered.php" method="post" id="loginout" name="login">
-                                <input type="text" name="email" placeholder="E-mail" class="logininput">
-                                <input type="password" name="password" placeholder="Password" class="logininput">
+                            <form action="../login.php" method="post" id="loginout" name="login">
+                                <input type="text" name="email" placeholder=" E-mail" class="logininput">
+                                <input type="password" name="password" placeholder=" Password" class="logininput">
                                 <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
                             </form>
                         </div>
@@ -72,7 +72,7 @@ session_start();
                     <div class="_52lq">Sign Up</div>
                     <div class="_52lr">Fee based on attendee status. !!</div>
                 </div>
-                <form action="onlineregistered.php" method="post" id="reg" name="reg">
+                <form action="../onlineregistered.php" method="post" id="reg" name="reg">
                     <div id="reg_form_box" class="large_form">
                         <div class="clearfix _58mh">
                             <div class="mbm _3-90 lfloat _ohe">

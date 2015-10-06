@@ -13,7 +13,7 @@
     $sex = $_POST['sex'];
 
     // If valid, add the product to the database
-    require_once('../database.php');
+    require_once('database.php');
     $query = "INSERT INTO users
         (fname, password, lname, email, number, address, attendee, company, sex)
               VALUES
@@ -22,5 +22,5 @@
 
     $_SESSION["id"] = $email;
 
-    include('index.php');
+    header("Location: {$_SERVER["HTTP_REFERER"]}");
 ?>

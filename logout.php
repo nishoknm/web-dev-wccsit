@@ -6,5 +6,5 @@ session_unset();
 // destroy the session 
 session_destroy();
 
-include('index.php');
+header("Location: {$_SERVER["HTTP_REFERER"]}");
 ?>
