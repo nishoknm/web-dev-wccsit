@@ -53,6 +53,17 @@ body {
     font-size: 20px;
 }
 
+#header img {
+    width: 20%;
+    max-width: 240px;
+}
+
+#login {
+    float: right;
+    padding-top: 6px;
+    padding-right: 40px;
+}
+
 #footer {
     position: relative;
     overflow: hidden;
@@ -131,7 +142,7 @@ body {
     clear: both;
     text-align: center;
     margin: 0;
-    padding: 15px 0px 0px 0px;
+    padding: 12.5px 0px 0px 0px;
     list-style-type: none;
     background: transparent;
 }
@@ -166,7 +177,6 @@ body {
     padding-right: 40px;
     list-style-type: none;
     background: transparent;
-    float: right;
 }
 
 #footerlist {
@@ -480,6 +490,21 @@ ol {
     font-size: 18px;
     padding: 8px 10px;
     border-radius: 5px;
+    margin: 0;
+    border: 1px solid #bdc7d8;
+}
+
+.logininput {
+    font-size: 18px;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin: 0;
+    border: 1px solid #bdc7d8;
+}
+
+.loginoutbutton {
+    font-size: 18px;
+    padding: 4px 6px;
     margin: 0;
     border: 1px solid #bdc7d8;
 }

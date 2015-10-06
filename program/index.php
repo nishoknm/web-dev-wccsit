@@ -1,22 +1,42 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="default.css">
+    <link rel="stylesheet" type="text/css" href="../default.css">
 </head>
 
 <body>
     <div id="header">
         <div>
-            <img src="images/images.jpg" title="WC-CSIT" />
-            <ul id="sublist">
-                <li><a href="generalInfo.html">General Information</a> | </li>
-                <li><a href="important-dates.html">Important Dates</a> | </li>
-                <li><a href="revieweronline.html">Reviewer Login</a> | </li>
-                <li><a href="onlineregistration.html">Online Registration</a> | </li>
-                <li><a href="guidelines.html">Guidelines</a> | </li>
-                <li><a href="feedback.html">Comments and feedback</a></li>
-            </ul>
+            <img src="../images/images.jpg" title="WC-CSIT" />
+            <div style="float:right;height:50px">
+                <ul id="sublist">
+                    <li><a href="../generalInfo">General Information</a> | </li>
+                    <li><a href="../important-dates">Important Dates</a> | </li>
+                    <li><a href="../revieweronline">Reviewer Login</a> | </li>
+                    <li><a href="../onlineregistration">Online Registration</a> | </li>
+                    <li><a href="../guidelines">Guidelines</a> | </li>
+                    <li><a href="../feedback">Comments and feedback</a></li>
+                </ul>
+                <div id="login">
+                    <?php if(!empty($_SESSION["id"])) : ?>
+                        Logged in as:
+                        <?php echo $_SESSION["id"] ?>
+                            <button class="loginoutbutton" name="weblogOff" id="u_0_11"><a href="logout.php">Logout</a></button>
+                            <?php else : ?>
+                                <div class="login">
+                                    <form action="onlineregistered.php" method="post" id="loginout" name="login">
+                                        <input type="text" name="email" placeholder="E-mail" class="logininput">
+                                        <input type="password" name="password" placeholder="Password" class="logininput">
+                                        <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
+                                    </form>
+                                </div>
+                                <?php endif; ?>
+                </div>
+            </div>
         </div>
         <div id="multicolor-bar">
             <div class="col-xs-2 colorblock-1"></div>
@@ -27,12 +47,12 @@
             <div class="col-xs-2 colorblock-6"></div>
         </div>
         <ul id="mainlist">
-            <li><a href="index.html">Home</a> | </li>
-            <li><a href="speakers.html">Keynote Speakers</a> | </li>
-            <li><a href="callpaper.html">Call for paper</a> | </li>
-            <li><a href="majorareas.html">Major Areas</a> | </li>
-            <li><a href="papersubmission.html">Paper Submission</a> | </li>
-            <li><a href="program.html">Conference Program</a></li>
+            <li><a href="../">Home</a> | </li>
+            <li><a href="../speakers">Keynote Speakers</a> | </li>
+            <li><a href="../callpaper">Call for paper</a> | </li>
+            <li><a href="../majorareas">Major Areas</a> | </li>
+            <li><a href="../papersubmission">Paper Submission</a> | </li>
+            <li><a href="../program">Conference Program</a></li>
         </ul>
     </div>
     <div id="container">
@@ -270,19 +290,19 @@
             <div id="footerbottom">
                 <ul id="footerlist">
                     <li>
-                        <a href=""><img src="images/facebook.png" alt="Facebook" /></a>
+                        <a href=""><img src="../images/facebook.png" alt="Facebook" /></a>
                     </li>
                     <li>
-                        <a href=""><img src="images/linkedin.png" alt="LinkedIn" /></a>
+                        <a href=""><img src="../images/linkedin.png" alt="LinkedIn" /></a>
                     </li>
                     <li>
-                        <a href=""><img src="images/twitter.png" alt="Twitter" /></a>
+                        <a href=""><img src="../images/twitter.png" alt="Twitter" /></a>
                     </li>
                     <li>
-                        <a href=""><img src="images/google.png" alt="Google" /></a>
+                        <a href=""><img src="../images/google.png" alt="Google" /></a>
                     </li>
                     <li>
-                        <a href=""><img src="images/youtube.png" alt="Google" /></a>
+                        <a href=""><img src="../images/youtube.png" alt="Google" /></a>
                     </li>
                 </ul>
             </div>
