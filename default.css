@@ -60,8 +60,14 @@ body {
 
 #login {
     float: right;
-    padding-top: 6px;
+    padding-top: 10px;
     padding-right: 40px;
+    font-family: segoe ui, sans-serif;
+    font-size: 18px;
+}
+
+#login a {
+    text-decoration: none;
 }
 
 #footer {
@@ -496,15 +502,13 @@ ol {
 
 .logininput {
     font-size: 18px;
-    padding: 4px 6px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin: 0;
     border: 1px solid #bdc7d8;
 }
 
 .loginoutbutton {
     font-size: 18px;
-    padding: 4px 6px;
     margin: 0;
     border: 1px solid #bdc7d8;
 }
