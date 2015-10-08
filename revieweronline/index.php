@@ -45,7 +45,9 @@ if(!empty($_SESSION["reviewer"]))
                     <?php if(!empty($_SESSION["id"])) : ?>
                         Logged in as :
                         <?php echo $_SESSION["id"] ?>
-                            <button class="loginoutbutton" name="weblogOff" id="u_0_11"><a href="../logout.php">Logout</a></button>
+                            <form action="../logout.php" method="post" id="logout" name="logout" class="formlogout">
+                                <button type="submit" class="loginoutbutton" name="weblogOff" id="u_0_11">Logout</button>
+                            </form>
                             <?php else : ?>
                                 <div class="login">
                                     <form action="../login.php" method="post" id="loginout" name="login">

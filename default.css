@@ -433,7 +433,7 @@ ol {
     width: 50%;
     height: auto;
     min-height: 680px;
-    border:2px solid #3ba7e2;
+    border: 2px solid #3ba7e2;
 }
 
 .pvl {
@@ -598,4 +598,9 @@ ol {
     font-weight: bold;
     text-align: center;
     color: #3ba7e2;
+}
+
+.formlogout {
+    float: right;
+    margin-left: 10px;
 }
