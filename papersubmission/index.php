@@ -77,7 +77,7 @@ if(!empty($_SESSION["id"]))
     </div>
     <div id="container">
         <div id="entrycontent">
-            <?php if(!empty($_SESSION["id"])) : ?>
+            <?php if(!empty($_SESSION["id"]) && empty($_SESSION["reviewer"])) : ?>
             <div id="upload-signup">
                 <div class="pvl">
                     <div class="_52lt">Upload Paper</div>
@@ -111,7 +111,18 @@ if(!empty($_SESSION["id"]))
                     </div>
                 <?php endforeach; ?>
             </div>
-            <iframe id="pdfviewer" class="pdfviewer" src="defaultpreviewer.html"></iframe>
+            <iframe id="pdfviewer" class="pdfviewer" src="../defaultpreviewer.html"></iframe>
+            <?php elseif(!empty($_SESSION["reviewer"])) : ?>
+            <div id="signup">
+                <div class="pvl">
+                    <div class="_52lt">Upload Paper</div>
+                </div>
+                <div id="reg_form_box" class="large_form">
+                    <div class="pvl">
+                        <div class="_52lt">Please use<a style="text-decoration:none" href="../revieweronline"> Reviewer Online</a> to review.</div>
+                    </div>
+                </div>
+            </div>
             <?php else : ?>
             <div id="signup">
                 <div class="pvl">
