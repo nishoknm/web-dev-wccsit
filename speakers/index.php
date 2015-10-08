@@ -87,11 +87,11 @@ session_start();
     <div id="xcontainer">
         <div id="speakermenu">
             <ul id="speakerlist">
-                <li onclick="selectList(event)" value="Slawomir">Slawomir Koziel</li>
-                <li onclick="selectList(event)" value="Rommie">Rommie Amaros</li>
-                <li onclick="selectList(event)" value="Jackie">Jackie Chen</li>
-                <li onclick="selectList(event)" value="Victor">Victor Raskinn</li>
-                <li onclick="selectList(event)" value="yaroslav">Yaroslav D. Sergeyev</li>
+                <li name="speakers" onclick="selectList(event)" value="Slawomir">Slawomir Koziel</li>
+                <li name="speakers" onclick="selectList(event)" value="Rommie">Rommie Amaros</li>
+                <li name="speakers" onclick="selectList(event)" value="Jackie">Jackie Chen</li>
+                <li name="speakers" onclick="selectList(event)" value="Victor">Victor Raskinn</li>
+                <li name="speakers" onclick="selectList(event)" value="yaroslav">Yaroslav D. Sergeyev</li>
             </ul>
         </div>
         <div id="speakercontainer">

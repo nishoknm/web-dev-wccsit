@@ -423,6 +423,19 @@ ol {
     width: 600px;
 }
 
+#upload-signup {
+    margin: 0 auto 30px auto;
+    width: 45%;
+    float: left;
+}
+
+.pdfviewer {
+    width: 50%;
+    height: auto;
+    min-height: 680px;
+    border:2px solid #3ba7e2;
+}
+
 .pvl {
     padding-bottom: 20px;
 }
@@ -564,4 +577,25 @@ ol {
     position: fixed;
     z-index: 20000;
     top: 30%;
+}
+
+.paperactive {
+    background: #3ba7e2;
+    border: 1px solid #3ba7e2;
+    border-radius: 0;
+}
+
+#paperdiv:hover {
+    background: #3ba7e2;
+    border: 1px solid #3ba7e2;
+    border-radius: 0;
+}
+
+#body {
+    margin: 30% auto 0 auto;
+    font-family: segoe ui, sans-serif;
+    font-size: 85px;
+    font-weight: bold;
+    text-align: center;
+    color: #3ba7e2;
 }

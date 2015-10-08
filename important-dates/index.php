@@ -3,11 +3,9 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="stylesheet" type="text/css" href="../default.css">
+<link rel="stylesheet" type="text/css" href="../default.css">
 </head>
-
 <body>
     <div id="header">
         <div>

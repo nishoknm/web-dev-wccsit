@@ -72,51 +72,51 @@ session_start();
                     <div class="pvl">
                         <div class="_52lt">Feedback...!</div>
                     </div>
-                    <form method="post" id="reg" name="reg">
+                    <form action="../comments.php" method="post" id="reg" name="reg">
                         <div id="reg_form_box" class="large_form">
                             <div class="clearfix _58mh">
                                 <div class="mbm _3-90 lfloat _ohe">
                                     <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                         <div class="placeholder">First name</div>
-                                        <input type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                        <input name="fname" type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
                                     </div>
                                 </div>
                                 <div class="mbm rfloat _ohf">
                                     <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                         <div class="placeholder">Last name</div>
-                                        <input type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                        <input name="lname" type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
                                     </div>
                                 </div>
                             </div>
                             <div class="mbm">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                     <div class="placeholder">Email</div>
-                                    <input type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="email" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_3">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                     <div class="placeholder">Mobile number</div>
-                                    <input type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="number" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_4">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                     <div class="placeholder">Feedback about ?</div>
-                                    <input type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="subject" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_7">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
                                     <div class="placeholder">Please leave your comment here..!!</div>
-                                    <textarea class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)"></textarea>
+                                    <textarea name="comment" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)"></textarea>
                                 </div>
                             </div>
                             <div class="clearfix">
                                 <button type="submit" class="_52lq" name="websubmit" id="u_0_9">Submit</button>
                             </div>
+                        </div>
                     </form>
-                    </div>
                 </div>
             </div>
             <div id="footer">
