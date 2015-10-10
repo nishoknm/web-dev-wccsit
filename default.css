@@ -37,8 +37,10 @@
     }
 }
 
+html,
 body {
     margin: 0;
+    height: 100%;
 }
 
 #header {
@@ -47,7 +49,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 126px;
     overflow: auto;
     background: #3ba7e2;
     font-size: 20px;
@@ -71,7 +73,7 @@ body {
 }
 
 #footer {
-    position: relative;
+    position: absolute;
     overflow: hidden;
     bottom: 0;
     left: 0;
@@ -98,7 +100,7 @@ body {
     font-family: segoe ui, sans-serif;
     font-size: 20px;
     position: relative;
-    top: 120px;
+    min-height: 100%;
     left: 0;
     right: 0;
     overflow: auto;
@@ -107,8 +109,10 @@ body {
 
 #entrycontent {
     padding: 20px;
-    min-height: 685px;
+    padding-bottom: 120px;
+    padding-top: 140px;
     height: auto;
+    overflow: auto;
 }
 
 #xfooter {
@@ -242,17 +246,16 @@ body {
 
 #speakermenu {
     position: relative;
+    padding-top: 200px;
     float: left;
     width: 25%;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 #speakercontainer {
-    position: relative;
     float: left;
     width: 74%;
     height: 100%;
+    padding-bottom: 20px;
 }
 
 #speakerlist {
@@ -280,8 +283,7 @@ body {
 
 .speaker {
     text-align: justify;
-    padding: 15px;
-    position: absolute;
+    padding: 20px;
     display: none;
 }
 
@@ -424,9 +426,10 @@ ol {
 }
 
 #upload-signup {
-    margin: 0 auto 30px auto;
+    margin: 0 auto auto auto;
     width: 45%;
     float: left;
+    overflow: auto;
 }
 
 .pdfviewer {
@@ -434,6 +437,8 @@ ol {
     height: auto;
     min-height: 680px;
     border: 2px solid #3ba7e2;
+    position: absolute;
+    right: 35px;
 }
 
 .pvl {
@@ -588,7 +593,6 @@ ol {
 #paperdiv:hover {
     background: #3ba7e2;
     border: 1px solid #3ba7e2;
-    border-radius: 0;
 }
 
 #body {

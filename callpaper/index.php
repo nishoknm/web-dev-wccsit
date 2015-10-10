@@ -9,54 +9,54 @@ session_start();
 </head>
 
 <body>
-    <div id="header">
-        <div>
-            <img src="../images/images.jpg" title="WC-CSIT" />
-            <div style="float:right;height:50px">
-                <ul id="sublist">
-                    <li><a href="../generalInfo">General Information</a> | </li>
-                    <li><a href="../important-dates">Important Dates</a> | </li>
-                    <li><a href="../revieweronline">Reviewer Login</a> | </li>
-                    <li><a href="../onlineregistration">Online Registration</a> | </li>
-                    <li><a href="../guidelines">Guidelines</a> | </li>
-                    <li><a href="../feedback">Comments and feedback</a></li>
-                </ul>
-                <div id="login">
-                    <?php if(!empty($_SESSION["id"])) : ?>
-                        Logged in as : <?php echo $_SESSION["id"] ?>
-                            <form action="../logout.php" method="post" id="logout" name="logout" class="formlogout">
-                                <button type="submit" class="loginoutbutton" name="weblogOff" id="u_0_11">Logout</button>
-                            </form>
-                            <?php else : ?>
-                                <div class="login">
-                                    <form action="../login.php" method="post" id="loginout" name="login">
-                                        <input type="text" name="email" placeholder=" E-mail" class="logininput">
-                                        <input type="password" name="password" placeholder=" Password" class="logininput">
-                                        <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
-                                    </form>
-                                </div>
-                                <?php endif; ?>
+    <div id="container">
+        <div id="header">
+            <div>
+                <img src="../images/images.jpg" title="WC-CSIT" />
+                <div style="float:right;height:50px">
+                    <ul id="sublist">
+                        <li><a href="../generalInfo">General Information</a> | </li>
+                        <li><a href="../important-dates">Important Dates</a> | </li>
+                        <li><a href="../revieweronline">Reviewer Login</a> | </li>
+                        <li><a href="../onlineregistration">Online Registration</a> | </li>
+                        <li><a href="../guidelines">Guidelines</a> | </li>
+                        <li><a href="../feedback">Comments and feedback</a></li>
+                    </ul>
+                    <div id="login">
+                        <?php if(!empty($_SESSION["id"])) : ?>
+                            Logged in as : <?php echo $_SESSION["id"] ?>
+                                <form action="../logout.php" method="post" id="logout" name="logout" class="formlogout">
+                                    <button type="submit" class="loginoutbutton" name="weblogOff" id="u_0_11">Logout</button>
+                                </form>
+                                <?php else : ?>
+                                    <div class="login">
+                                        <form action="../login.php" method="post" id="loginout" name="login">
+                                            <input type="text" name="email" placeholder=" E-mail" class="logininput">
+                                            <input type="password" name="password" placeholder=" Password" class="logininput">
+                                            <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
+                                        </form>
+                                    </div>
+                                    <?php endif; ?>
+                    </div>
                 </div>
             </div>
+            <div id="multicolor-bar">
+                <div class="col-xs-2 colorblock-1"></div>
+                <div class="col-xs-2 colorblock-2"></div>
+                <div class="col-xs-2 colorblock-3"></div>
+                <div class="col-xs-2 colorblock-4"></div>
+                <div class="col-xs-2 colorblock-5"></div>
+                <div class="col-xs-2 colorblock-6"></div>
+            </div>
+            <ul id="mainlist">
+                <li><a href="../">Home</a> | </li>
+                <li><a href="../speakers">Keynote Speakers</a> | </li>
+                <li><a href="../callpaper">Call for paper</a> | </li>
+                <li><a href="../majorareas">Major Areas</a> | </li>
+                <li><a href="../papersubmission">Paper Submission</a> | </li>
+                <li><a href="../program">Conference Program</a></li>
+            </ul>
         </div>
-        <div id="multicolor-bar">
-            <div class="col-xs-2 colorblock-1"></div>
-            <div class="col-xs-2 colorblock-2"></div>
-            <div class="col-xs-2 colorblock-3"></div>
-            <div class="col-xs-2 colorblock-4"></div>
-            <div class="col-xs-2 colorblock-5"></div>
-            <div class="col-xs-2 colorblock-6"></div>
-        </div>
-        <ul id="mainlist">
-            <li><a href="../">Home</a> | </li>
-            <li><a href="../speakers">Keynote Speakers</a> | </li>
-            <li><a href="../callpaper">Call for paper</a> | </li>
-            <li><a href="../majorareas">Major Areas</a> | </li>
-            <li><a href="../papersubmission">Paper Submission</a> | </li>
-            <li><a href="../program">Conference Program</a></li>
-        </ul>
-    </div>
-    <div id="container">
         <div id="entrycontent">
             <div class="entry-content">
                 <h1 style="padding-bottom: 30px;">Call for Papers</h2>
@@ -82,7 +82,7 @@ session_start();
             <p style="text-align: justify;"><b>Papers must be based on <strong>unpublished original work</strong> and must be submitted to WS-CSIT only.&nbsp;</b><span style="text-decoration: underline;">Submission implies the willingness of at least one of the authors to register and present the paper.</span></p>
             <p style="text-align: justify;"><strong>Deadlines</strong> for draft paper submission, notification of acceptance, camera-ready paper submission and registration may be found in the <a title="Important Dates" href="important-dates.html">Important Dates</a> section.</p>
         </div>
-    </div>
+        </div>
         <div id="footer">
             <div id="footertop">
                 <p><strong>World Congress CS-IT Conference (WS-CSIT)</strong>
