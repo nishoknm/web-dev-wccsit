@@ -18,7 +18,7 @@
         (fname, password, lname, email, number, address, attendee, company, sex)
               VALUES
         ('$fName', '$pass', '$lName', '$email', '$number', '$address', '$attendee', '$comOrg', '$sex')";
-    $db->exec($query);
+    $db->prepare($query)->execute();  
 
     $_SESSION["id"] = $email;
 

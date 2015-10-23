@@ -15,7 +15,7 @@
         (fname, lname, email, number, subject, comment)
               VALUES
         ('$fname', '$lname', '$email', '$number', '$subject', '$comment')";
-    $db->exec($query);
+    $db->prepare($query)->execute();  
 
     header("Location: {$_SERVER["HTTP_REFERER"]}");
 ?>
