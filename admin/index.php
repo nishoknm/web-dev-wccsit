@@ -326,6 +326,7 @@ if(!empty($_SESSION["admin"]))
                                             <th><input class="ainputtext" readonly value="Number"></th>
                                             <th><input class="ainputtext" readonly value="Password"></th>
                                             <th><input class="ainputtext" readonly value="Address"></th>
+                                            <th><input class="ainputtext" readonly value="Attendee"></th>
                                             <th><input class="ainputtext" readonly value="Sex"></th>
                                         </tr>
                                     </thead>
@@ -339,6 +340,23 @@ if(!empty($_SESSION["admin"]))
                                             <td><input disabled class="ainputtext" xname="enumber" value='<?php echo $user['number']; ?>' ></td>
                                             <td><input disabled class="ainputtext" xname="epassword" value='<?php echo $user['password']; ?>' ></td>
                                             <td><input disabled class="ainputtext" xname="eaddress" value='<?php echo $user['address']; ?>' ></td>
+                                            <td>
+                                                <select disabled class="ainputtext" xname="eattendee">
+                                                    <?php if ($user['attendee'] == 'Author'): ?>
+                                                        <option value="Author" title="Paper Title" selected>Author</option>
+                                                        <option value="Student" title="Paper Title">Student</option>
+                                                        <option value="Regular Attendee" title="Paper Title">Regular Attendee</option>
+                                                    <?php elseif ($user['attendee'] == 'Student'): ?>
+                                                        <option value="Author" title="Paper Title">Author</option>
+                                                        <option value="Student" title="Paper Title" selected>Student</option>
+                                                        <option value="Regular Attendee" title="Paper Title">Regular Attendee</option>
+                                                    <?php else: ?>
+                                                        <option value="Author" title="Paper Title">Author</option>
+                                                        <option value="Student" title="Paper Title">Student</option>
+                                                        <option value="Regular Attendee" title="Paper Title" selected>Regular Attendee</option>
+                                                    <?php endif ?>
+                                                </select>
+                                            </td>
                                             <td>
                                                 <select disabled class="ainputtext" xname="esex" readonly>
                                                     <?php if ($user['sex'] == 'Male'): ?>

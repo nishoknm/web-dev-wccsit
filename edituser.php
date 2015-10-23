@@ -21,8 +21,9 @@
         $address = $_POST['eaddress'];
         $sex = $_POST['esex'];
         $pass = $_POST['epassword'];
+        $attendee = $_POST['eattendee'];
 
-        $query = "UPDATE users SET fname = '$fname', lname = '$lname', password = '$pass', number = '$number', address = '$address', sex = '$sex' WHERE email = '$email' ";
+        $query = "UPDATE users SET fname = '$fname', attendee = '$attendee', lname = '$lname', password = '$pass', number = '$number', address = '$address', sex = '$sex' WHERE email = '$email' ";
         $db->prepare($query)->execute(); 
     }
 
