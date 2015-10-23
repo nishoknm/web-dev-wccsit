@@ -12,7 +12,7 @@
 
     $reviewers = $db->query($query);
 
-    $reviewer = $reviewers->fetch();
+    $reviewer = mysqli_fetch_assoc($reviewers);
 
     $newemail = $reviewer['email'];
 

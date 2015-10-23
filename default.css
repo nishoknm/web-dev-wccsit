@@ -435,7 +435,7 @@ ol {
 .pdfviewer {
     width: 50%;
     height: auto;
-    min-height: 680px;
+    min-height: 71%;
     border: 2px solid #3ba7e2;
     position: absolute;
     right: 35px;
@@ -547,6 +547,10 @@ ol {
     zoom: 1;
 }
 
+.padtop {
+    padding-top: 13px;
+}
+
 ._3-90 {
     margin-right: 8px;
 }
@@ -587,7 +591,6 @@ ol {
 .paperactive {
     background: #3ba7e2;
     border: 1px solid #3ba7e2;
-    border-radius: 0;
 }
 
 #paperdiv:hover {
@@ -607,4 +610,120 @@ ol {
 .formlogout {
     float: right;
     margin-left: 10px;
+}
+
+#dialogdiv {
+    background: #3ba7e2;
+    min-height: 100%;
+}
+
+dialog {
+    top: 40%;
+    border: #3ba7e2;
+}
+
+.dialog {
+    top: 40%;
+    left: 40%;
+    background: white;
+    position: absolute;
+    height: 180px;
+    width: 300px;
+    text-align: center;
+}
+
+#u_admin {
+    background: #3ba7e2;
+    border: 1px solid #3ba7e2;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    float: right;
+}
+
+.clearfixadmin {
+    padding: 8px 15px;
+}
+
+.admintable {
+    min-height: 70%;
+    display: none;
+}
+
+section div:target {
+    display: block;
+}
+
+.admint {
+    min-width: 100%;
+}
+
+.admint th input {
+    text-align: left;
+    background: #3ba7e2;
+    color: white;
+    float: left;
+}
+
+.adminc {
+    min-width: 50%;
+    padding-top: 50px;
+    padding-left: 28px;
+}
+
+#u_admin_review {
+    background: #3ba7e2;
+    border: 1px solid #3ba7e2;
+    width: 250px;
+    height: 75px;
+    font-size: 20px
+}
+
+.ainputtext {
+    position: relative;
+    font-size: 18px;
+    padding: 8px 10px;
+    margin: 0;
+    border: 1px solid #bdc7d8;
+}
+
+.ainputtext,
+select.ainputtext {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input.ainputtext:disabled {
+    color: rgb(84, 84, 84);
+    background-color: rgb(235, 235, 228);
+}
+
+select.ainputtext:disabled {
+    color: rgb(84, 84, 84);
+    background-color: rgb(235, 235, 228);
+}
+
+.toolbar {
+    padding-left: 28px;
+    padding-bottom: 20px;
+}
+
+.u_admin_toolbar {
+    background: #3ba7e2;
+    border: 1px solid #3ba7e2;
+    width: 150px;
+    height: 50px;
+    font-size: 20px
+}
+
+.check {
+    transform: scale(1.5);
+}
+
+.border {
+    border: 2px solid #3ba7e2;
+}
+
+.checkcell {
+    width: 22px;
 }

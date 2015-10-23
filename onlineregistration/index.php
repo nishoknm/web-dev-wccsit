@@ -6,7 +6,7 @@ if(!empty($_SESSION["id"]))
     $email = $_SESSION["id"];
     $query = "SELECT * FROM users WHERE email = '$email'";
     $users = $db->query($query);
-    $user = $users->fetch();
+    $user = mysqli_fetch_assoc($users);
     $newemail = $user['email'];
     $fName = $user['fname'];
     $lName = $user['lname'];
