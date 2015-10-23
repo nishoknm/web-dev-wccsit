@@ -16,7 +16,7 @@
         // If valid, add the product to the database
         require_once('database.php');
         $query = "INSERT INTO paper(title,file,type,size,email) VALUES('$file_title', '$file','$file_type','$file_size', '$email')";
-        $db->exec($query);
+        $db->prepare($query)->execute(); 
     }
     header("Location: {$_SERVER["HTTP_REFERER"]}");
 ?>
