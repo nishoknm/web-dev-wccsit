@@ -189,9 +189,13 @@ if(!empty($_SESSION["admin"]))
                                             <td><input disabled class="ainputtext" xname="uaddress" value='<?php echo $reviewer['address']; ?>' ></td>
                                             <td>
                                                 <select disabled class="ainputtext" xname="usex" readonly>
-                                                    <option value="select"><?php echo $reviewer['sex']; ?></option>
-                                                    <option value="Male" title="Male">Male</option>
-                                                    <option value="Female" title="Female">Female</option>
+                                                    <?php if ($reviewer['sex'] == 'Male'): ?>
+                                                        <option value="Male" title="Male" selected>Male</option>
+                                                        <option value="Female" title="Female">Female</option>
+                                                    <?php else: ?>
+                                                        <option value="Male" title="Male">Male</option>
+                                                        <option value="Female" title="Female" selected>Female</option>
+                                                    <?php endif ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -247,17 +251,23 @@ if(!empty($_SESSION["admin"]))
                                             <td><input class="check" xname="check" onclick="oncheck(event,true)" type="checkbox"></td>
                                             <td>
                                                 <select disabled class="ainputtext" xname="rfemail">
-                                                    <option value='<?php echo $rpaper['email']; ?>'><?php echo $rpaper['email']; ?></option>
                                                     <?php foreach ( $reviewers as $reviewer ) : ?>
-                                                        <option value='<?php echo $reviewer['email']; ?>' title="Reviewer Email"><?php echo $reviewer['email']; ?></option>
+                                                        <?php if ($rpaper['email'] == $reviewer['email']): ?>
+                                                            <option value='<?php echo $reviewer['email']; ?>' title="Reviewer Email" selected><?php echo $reviewer['email']; ?></option>
+                                                        <?php else: ?>
+                                                            <option value='<?php echo $reviewer['email']; ?>' title="Reviewer Email"><?php echo $reviewer['email']; ?></option>
+                                                        <?php endif ?>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </td>
                                             <td>
                                                 <select disabled class="ainputtext" xname="rftitle" onchange="setFile(event)">
-                                                    <option value='<?php echo $rpaper['paperid']; ?>'><?php echo $rpaper['title']; ?></option>
                                                     <?php foreach ( $papers as $paper ) : ?>
-                                                        <option value='<?php echo $paper['paperid']; ?>' filename='<?php echo $paper['file']; ?>' title="Paper Title"><?php echo $paper['title']; ?></option>
+                                                        <?php if ($rpaper['paperid'] == $paper['paperid']): ?>
+                                                            <option value='<?php echo $paper['paperid']; ?>' filename='<?php echo $paper['file']; ?>' title="Paper Title" selected><?php echo $paper['title']; ?></option>
+                                                        <?php else: ?>
+                                                            <option value='<?php echo $paper['paperid']; ?>' filename='<?php echo $paper['file']; ?>' title="Paper Title"><?php echo $paper['title']; ?></option>
+                                                        <?php endif ?>
                                                     <?php endforeach; ?>
                                                 </select>
                                             </td>
@@ -268,7 +278,7 @@ if(!empty($_SESSION["admin"]))
                                             <td></td>
                                             <td>
                                                 <select class="ainputtext transparent" name="email">
-                                                    <option value="Email">Email</option>
+                                                    <option value="-- Select Reviewer Email --">-- Select Reviewer Email --</option>
                                                     <?php foreach ( $reviewers as $reviewer ) : ?>
                                                         <option value='<?php echo $reviewer['email']; ?>' title="Reviewer Email"><?php echo $reviewer['email']; ?></option>
                                                     <?php endforeach; ?>
@@ -276,7 +286,7 @@ if(!empty($_SESSION["admin"]))
                                             </td>
                                             <td>
                                                 <select class="ainputtext transparent" name="title" onchange="setFile(event)">
-                                                    <option value="Email">Paper Title</option>
+                                                    <option value="-- Select a Paper --">-- Select a Paper --</option>
                                                     <?php foreach ( $papers as $paper ) : ?>
                                                         <option value='<?php echo $paper['paperid']; ?>' filename='<?php echo $paper['file']; ?>' title="Paper Title"><?php echo $paper['title']; ?></option>
                                                     <?php endforeach; ?>
@@ -331,9 +341,13 @@ if(!empty($_SESSION["admin"]))
                                             <td><input disabled class="ainputtext" xname="eaddress" value='<?php echo $user['address']; ?>' ></td>
                                             <td>
                                                 <select disabled class="ainputtext" xname="esex" readonly>
-                                                    <option value="select"><?php echo $user['sex']; ?></option>
-                                                    <option value="Male" title="Male">Male</option>
-                                                    <option value="Female" title="Female">Female</option>
+                                                    <?php if ($user['sex'] == 'Male'): ?>
+                                                        <option value="Male" title="Male" selected>Male</option>
+                                                        <option value="Female" title="Female">Female</option>
+                                                    <?php else: ?>
+                                                        <option value="Male" title="Male">Male</option>
+                                                        <option value="Female" title="Female" selected>Female</option>
+                                                    <?php endif ?>
                                                 </select>
                                             </td>
                                         </tr>
