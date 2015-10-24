@@ -26,15 +26,15 @@ session_start();
                             <?php if(!empty($_SESSION["id"])) : ?>
                                 Logged in as :
                                 <?php echo $_SESSION["id"] ?>
-                                    <form action="../logout.php" method="post" id="logout" name="logout" class="formlogout">
-                                        <button type="submit" class="loginoutbutton" name="weblogOff" id="u_0_11">Logout</button>
+                                    <form action="../model.php" method="post" id="logout" name="logout" class="formlogout">
+                                        <button type="submit" class="loginoutbutton" name="websubmit" value="logout" id="u_0_11">Logout</button>
                                     </form>
                                     <?php else : ?>
                                         <div class="login">
-                                            <form action="../login.php" method="post" id="loginout" name="login">
+                                            <form action="../model.php" method="post" id="loginout" name="login">
                                                 <input type="text" name="email" placeholder=" E-mail" class="logininput">
                                                 <input type="password" name="password" placeholder=" Password" class="logininput">
-                                                <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
+                                                <button type="submit" class="loginoutbutton" name="websubmit" value="login" id="u_0_10">Login</button>
                                             </form>
                                         </div>
                                         <?php endif; ?>
@@ -63,7 +63,7 @@ session_start();
                     <div class="pvl">
                         <div class="_52lt">Feedback...!</div>
                     </div>
-                    <form action="../comments.php" method="post" id="reg" name="reg">
+                    <form action="../model.php" method="post" id="reg" name="reg">
                         <div id="reg_form_box" class="large_form">
                             <div class="clearfix _58mh">
                                 <div class="mbm _3-90 lfloat _ohe">
@@ -98,7 +98,7 @@ session_start();
                                 </div>
                             </div>
                             <div class="clearfix">
-                                <button type="submit" class="_52lq" name="websubmit" id="u_0_9">Submit</button>
+                                <button type="submit" class="_52lq" name="websubmit" value="comments" id="u_0_9">Submit</button>
                             </div>
                         </div>
                     </form>

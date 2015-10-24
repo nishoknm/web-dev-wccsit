@@ -22,16 +22,6 @@ if(!empty($_SESSION["id"]))
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="../default.css">
-        <script>
-                function keydown(eve) {
-                    var ele = eve.target;
-                    ele.className = ele.className.replace(" transparent", "");
-                }
-                function keyup(eve) {
-                    var ele = eve.target;
-                    ele.value == "" && ele.className.indexOf(" transparent") == -1 ? ele.className += " transparent" : "";
-                }
-        </script>
     </head>
     <body>
         <div id="container">
@@ -51,15 +41,15 @@ if(!empty($_SESSION["id"]))
                             <?php if(!empty($_SESSION["id"])) : ?>
                             Logged in as :
                             <?php echo $_SESSION["id"] ?>
-                            <form action="../logout.php" method="post" id="logout" name="logout" class="formlogout">
-                                <button type="submit" class="loginoutbutton" name="weblogOff" id="u_0_11">Logout</button>
+                            <form action="../model.php" method="post" id="logout" name="logout" class="formlogout">
+                                <button type="submit" class="loginoutbutton" name="websubmit" value="logout" id="u_0_11">Logout</button>
                             </form>
                             <?php else : ?>
                             <div class="login">
-                                <form action="../login.php" method="post" id="loginout" name="login">
+                                <form action="../model.php" method="post" id="loginout" name="login">
                                     <input type="text" name="email" placeholder=" E-mail" class="logininput">
                                     <input type="password" name="password" placeholder=" Password" class="logininput">
-                                    <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
+                                    <button type="submit" class="loginoutbutton" name="websubmit" value="login" id="u_0_10">Login</button>
                                 </form>
                             </div>
                             <?php endif; ?>
@@ -90,38 +80,33 @@ if(!empty($_SESSION["id"]))
                         <div class="_52lq">Sign Up</div>
                         <div class="_52lr">Fee based on attendee status. !!</div>
                     </div>
-                    <form action="../onlineregistered.php" method="post" id="reg" name="reg">
+                    <form action="../model.php" method="post" id="reg" name="reg">
                         <div id="reg_form_box" class="large_form">
                             <div class="clearfix _58mh">
                                 <div class="mbm _3-90 lfloat _ohe">
                                     <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                        <div class="placeholder">First name</div>
-                                        <input name="fName" type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                        <input name="fName" type="text" class="inputtext transparent" placeholder="First name">
                                     </div>
                                 </div>
                                 <div class="mbm rfloat _ohf">
                                     <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                        <div class="placeholder">Last name</div>
-                                        <input name="lName" type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                        <input name="lName" type="text" class="inputtext transparent" placeholder="Last name">
                                     </div>
                                 </div>
                             </div>
                             <div class="mbm">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">Email</div>
-                                    <input name="email" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="email" type="text" class="inputtext transparent _58mg" placeholder="Email">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_3">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">Mobile number</div>
-                                    <input name="number" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="number" type="text" class="inputtext transparent _58mg" placeholder="Mobile number">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_5">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">Address</div>
-                                    <input name="address" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="address" type="text" class="inputtext transparent _58mg" placeholder="Address">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_6">
@@ -135,14 +120,12 @@ if(!empty($_SESSION["id"]))
                             </div>
                             <div class="mbm" id="u_0_7">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">Company or Organization</div>
-                                    <input name="comOrg" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="comOrg" type="text" class="inputtext transparent _58mg" placeholder="Company or Organization">
                                 </div>
                             </div>
                             <div class="mbm">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">New password</div>
-                                    <input name="password" type="password" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="password" type="password" class="inputtext transparent _58mg" placeholder="New password">
                                 </div>
                             </div>
                             <div class="mtm _5wa2 _5dbb"><span class="_5k_3"><span class="_5k_2 _5dba"><input type="radio" name="sex" value="Female" id="u_0_6"><label class="_52lr">Female</label></span><span class="_5k_2 _5dba"><input type="radio" name="sex" value="Male" id="u_0_7"><label class="_52lr">Male</label></span></span><i class="_5dbc _5k_6 img sp_LGqQTdUydKB sx_a32b95"></i><i class="_5dbd _5k_7 img sp_LGqQTdUydKB sx_b4917b"></i></div>
@@ -150,7 +133,7 @@ if(!empty($_SESSION["id"]))
                                 <p class="_52lr">By clicking Sign Up, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.</p>
                             </div>
                             <div class="clearfix">
-                                <button type="submit" class="_52lq" name="websubmit" id="u_0_9">Sign Up</button>
+                                <button type="submit" class="_52lq" name="websubmit" value="signup" id="u_0_9">Sign Up</button>
                             </div>
                         </div>
                     </form>

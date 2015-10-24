@@ -5,7 +5,6 @@
     $servername = "localhost";
     $dbname = "wccsit";
 
-    //$db = new PDO($dsn, $username, $password);
     $db = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection
     if (mysqli_connect_errno())

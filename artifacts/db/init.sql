@@ -1,12 +1,14 @@
 CREATE DATABASE  IF NOT EXISTS `wccsit`;
 USE `wccsit`;
 
+
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `email` varchar(150) NOT NULL,
   `password` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments` (
@@ -17,6 +19,7 @@ CREATE TABLE `comments` (
   `subject` varchar(150) NOT NULL,
   `comment` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -32,6 +35,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 DROP TABLE IF EXISTS `paper`;
 CREATE TABLE `paper` (
   `title` varchar(150) NOT NULL,
@@ -43,8 +47,8 @@ CREATE TABLE `paper` (
   PRIMARY KEY (`paperid`),
   UNIQUE KEY `title` (`title`),
   KEY `email` (`email`),
-  CONSTRAINT `email` FOREIGN KEY (`email`) REFERENCES `users` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  CONSTRAINT `email` FOREIGN KEY (`email`) REFERENCES `users` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 
 DROP TABLE IF EXISTS `reviewer`;
@@ -59,15 +63,17 @@ CREATE TABLE `reviewer` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 DROP TABLE IF EXISTS `reviewpapers`;
 CREATE TABLE `reviewpapers` (
   `email` varchar(150) DEFAULT NULL,
   `paperid` int(255) DEFAULT NULL,
   KEY `paperid` (`paperid`),
   KEY `reviewemail` (`email`),
-  CONSTRAINT `paperid` FOREIGN KEY (`paperid`) REFERENCES `paper` (`paperid`),
-  CONSTRAINT `reviewemail` FOREIGN KEY (`email`) REFERENCES `reviewer` (`email`) ON DELETE CASCADE
+  CONSTRAINT `paperid` FOREIGN KEY (`paperid`) REFERENCES `paper` (`paperid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `reviewemail` FOREIGN KEY (`email`) REFERENCES `reviewer` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 LOCK TABLES `admin` WRITE;

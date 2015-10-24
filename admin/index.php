@@ -107,7 +107,7 @@ if(!empty($_SESSION["admin"]))
         <?php if(empty($_SESSION["admin"])) : ?>
         <div id="dialogdiv">
             <div class="dialog">
-                <form action="../adminlogin.php" method="post" id="reg" name="reg">
+                <form action="../model.php" method="post" id="reg" name="reg">
                     <div class="clearfix _58mh padtop">
                         <div class="mbm rfloat _ohf">
                             <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
@@ -121,7 +121,7 @@ if(!empty($_SESSION["admin"]))
                         </div>
                     </div>
                     <div class="clearfixadmin">
-                        <button type="submit" name="webloginadmin" id="u_admin">Login</button>
+                        <button type="submit" name="websubmit" id="u_admin" value="admin_login">Login</button>
                     </div>
                 </form>
             </div>
@@ -136,8 +136,8 @@ if(!empty($_SESSION["admin"]))
                         <div id="login">
                             Logged in as :
                             <?php echo $_SESSION["admin"] ?>
-                            <form action="../logout.php" method="post" id="logout" name="logout" class="formlogout">
-                                <button type="submit" class="loginoutbutton" name="weblogOff" id="u_0_11">Logout</button>
+                            <form action="../model.php" method="post" id="logout" name="logout" class="formlogout">
+                                <button type="submit" class="loginoutbutton" value="admin_logout" name="websubmit" id="u_0_11">Logout</button>
                             </form>
                         </div>
                     </div>
@@ -164,10 +164,10 @@ if(!empty($_SESSION["admin"]))
                             <div class="_52lq">Add Reviewer</div>
                         </div>
                         <div>
-                            <form action="../addreviewer.php" method="post" id="reviewerform" name="reviewerform">
+                            <form action="../model.php" method="post" id="reviewerform" name="reviewerform">
                                 <div class="toolbar">
-                                    <button id="delete" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="Delete">Delete</button>
-                                    <button id="update" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="Update">Update</button>
+                                    <button id="delete" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="delete_reviewer">Delete</button>
+                                    <button id="update" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="update_reviewer">Update</button>
                                 </div>
                                 <table class="admint">
                                     <thead>
@@ -225,7 +225,7 @@ if(!empty($_SESSION["admin"]))
                                 </table>
                                 <div class="adminc">
                                     <div class="clearfix">
-                                        <button type="submit" class="_52lq" name="websubmit" value="Add Reviewer" id="u_admin_review">Add Reviewer</button>
+                                        <button type="submit" class="_52lq" name="websubmit" value="add_reviewer" id="u_admin_review">Add Reviewer</button>
                                     </div>
                                 </div>
                             </form>
@@ -236,10 +236,10 @@ if(!empty($_SESSION["admin"]))
                             <div class="_52lq">Edit Review Paper Information</div>
                         </div>
                         <div>
-                            <form action="../editreviewpaper.php" method="post" id="reviewerpaperform" name="reviewerpaperform">
+                            <form action="../model.php" method="post" id="reviewerpaperform" name="reviewerpaperform">
                                 <div class="toolbar">
-                                    <button id="delete" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="Delete">Delete</button>
-                                    <button id="update" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="Update">Update</button>
+                                    <button id="delete" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="delete_rpaper">Delete</button>
+                                    <button id="update" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="update_rpaper">Update</button>
                                 </div>
                                 <table class="admint">
                                     <thead>
@@ -303,7 +303,7 @@ if(!empty($_SESSION["admin"]))
                                 </table>
                                 <div class="adminc">
                                     <div class="clearfix">
-                                        <button type="submit" class="_52lq" name="websubmit" value="Add Review Paper" id="u_admin_review">Add Review Paper</button>
+                                        <button type="submit" class="_52lq" name="websubmit" value="add_rpaper" id="u_admin_review">Add Review Paper</button>
                                     </div>
                                 </div>
                                 <input id="old" name="old_email" value='' oldname="rfemail" style="display:none">
@@ -316,10 +316,10 @@ if(!empty($_SESSION["admin"]))
                             <div class="_52lq">Edit Users</div>
                         </div>
                         <div>
-                            <form action="../edituser.php" method="post" id="userform" name="userform">
+                            <form action="../model.php" method="post" id="userform" name="userform">
                                 <div class="toolbar">
-                                    <button id="delete" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="Delete">Delete</button>
-                                    <button id="update" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="Update">Update</button>
+                                    <button id="delete" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="delete_user">Delete</button>
+                                    <button id="update" disabled class="u_admin_toolbar" type="submit" name="websubmit" value="update_user">Update</button>
                                 </div>
                                 <table class="admint">
                                     <thead>

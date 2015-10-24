@@ -46,15 +46,15 @@ if(!empty($_SESSION["id"]))
                         <?php if(!empty($_SESSION["id"])) : ?>
                             Logged in as :
                             <?php echo $_SESSION["id"] ?>
-                                <form action="../logout.php" method="post" id="logout" name="logout" class="formlogout">
-                                    <button type="submit" class="loginoutbutton" name="weblogOff" id="u_0_11">Logout</button>
+                                <form action="../model.php" method="post" id="logout" name="logout" class="formlogout">
+                                    <button type="submit" class="loginoutbutton" name="websubmit" value="logout" id="u_0_11">Logout</button>
                                 </form>
                                 <?php else : ?>
                                     <div class="login">
-                                        <form action="../login.php" method="post" id="loginout" name="login">
+                                        <form action="../model.php" method="post" id="loginout" name="login">
                                             <input type="text" name="email" placeholder=" E-mail" class="logininput">
                                             <input type="password" name="password" placeholder=" Password" class="logininput">
-                                            <button type="submit" class="loginoutbutton" name="weblogin" id="u_0_10">Login</button>
+                                            <button type="submit" class="loginoutbutton" name="websubmit" value="login" id="u_0_10">Login</button>
                                         </form>
                                     </div>
                                 <?php endif; ?>
@@ -84,7 +84,7 @@ if(!empty($_SESSION["id"]))
                 <div class="pvl">
                     <div class="_52lt">Upload Paper</div>
                 </div>
-                <form action="../upload.php" method="post" id="reg" enctype="multipart/form-data">
+                <form action="../model.php" method="post" id="reg" enctype="multipart/form-data">
                     <div id="reg_form_box" class="large_form">
                         <div class="mbm">
                             <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
@@ -97,7 +97,7 @@ if(!empty($_SESSION["id"]))
                             </div>
                         </div>
                         <div class="clearfix">
-                            <button type="submit" class="_52lq" name="webupload" id="u_0_9">Upload</button>
+                            <button type="submit" class="_52lq" name="websubmit" value="upload" id="u_0_9">Upload</button>
                         </div>
                     </div>    
                 </form>
