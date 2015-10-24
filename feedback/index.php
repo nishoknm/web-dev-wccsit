@@ -6,17 +6,6 @@ session_start();
 
     <head>
         <link rel="stylesheet" type="text/css" href="../default.css">
-        <script>
-        function keydown(eve) {
-            var ele = eve.target;
-            ele.className = ele.className.replace(" transparent", "");
-        }
-
-        function keyup(eve) {
-            var ele = eve.target;
-            ele.value == "" && ele.className.indexOf(" transparent") == -1 ? ele.className += " transparent" : "";
-        }
-        </script>
     </head>
 
     <body>
@@ -79,39 +68,33 @@ session_start();
                             <div class="clearfix _58mh">
                                 <div class="mbm _3-90 lfloat _ohe">
                                     <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                        <div class="placeholder">First name</div>
-                                        <input name="fname" type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                        <input name="fname" type="text" placeholder="First name" class="inputtext transparent">
                                     </div>
                                 </div>
                                 <div class="mbm rfloat _ohf">
                                     <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                        <div class="placeholder">Last name</div>
-                                        <input name="lname" type="text" class="inputtext transparent" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                        <input name="lname" type="text" placeholder="Last name" class="inputtext transparent">
                                     </div>
                                 </div>
                             </div>
                             <div class="mbm">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">Email</div>
-                                    <input name="email" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="email" type="email" placeholder="Email" class="inputtext transparent _58mg">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_3">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">Mobile number</div>
-                                    <input name="number" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="number" type="number" placeholder="Mobile number" class="inputtext transparent _58mg">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_4">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">Feedback about ?</div>
-                                    <input name="subject" type="text" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)">
+                                    <input name="subject" type="text" placeholder="Feedback about ?" class="inputtext transparent _58mg">
                                 </div>
                             </div>
                             <div class="mbm" id="u_0_7">
                                 <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
-                                    <div class="placeholder">Please leave your comment here..!!</div>
-                                    <textarea name="comment" class="inputtext transparent _58mg" onkeydown="keydown(event)" onkeyup="keyup(event)"></textarea>
+                                    <textarea name="comment" class="inputtext transparent _58mg" placeholder="Please leave your comment here..!!"></textarea>
                                 </div>
                             </div>
                             <div class="clearfix">
