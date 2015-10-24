@@ -11,6 +11,8 @@ if(!empty($_SESSION["admin"]))
     $papers = $db->query($pquery);
     $rpquery = "SELECT reviewpapers.email, paper.paperid, paper.title, paper.file FROM reviewpapers INNER JOIN paper ON paper.paperid = reviewpapers.paperid";
     $rpapers = $db->query($rpquery);
+    $cquery = "SELECT * FROM comments";
+    $comments = $db->query($cquery);
 }
 ?>
 <!DOCTYPE html>
@@ -18,6 +20,9 @@ if(!empty($_SESSION["admin"]))
     <head>
         <link rel="stylesheet" type="text/css" href="../default.css">
         <script>
+        if (document.location.hash == "" || document.location.hash == "#")
+            document.location.hash = "#reviewer";
+
         var currentForm;
 
         function oncheck(event , storeOld) {
@@ -376,7 +381,43 @@ if(!empty($_SESSION["admin"]))
                         </div>
                     </div>
                     <div class="admintable" id="comments">
-                        comments
+                        <div id="signup">
+                            <div class="cpvl">
+                                <div class="_52lq">Comments</div>
+                            </div>
+                            <ul>
+                                <?php foreach ( $comments as $comment ) : ?>
+                                    <li>
+                                        <div id="reg_form_box" class="large_form">
+                                            <div class="mbm">
+                                                <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
+                                                    <div class="placeholder"><b>Full Name : </b>
+                                                        <?php echo $comment['lname'].", ".$comment['fname'] ?>
+                                                    </div>
+                                                    <input disabled name="name" type="text" class="inputtext transparent _58mg">
+                                                </div>
+                                            </div>
+                                            <div class="mbm">
+                                                <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
+                                                    <div class="placeholder"><b>E-mail : </b>
+                                                        <?php echo $comment['email'] ?>
+                                                    </div>
+                                                    <input disabled name="email" type="text" class="inputtext transparent _58mg">
+                                                </div>
+                                            </div>
+                                            <div class="mbm">
+                                                <div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
+                                                    <div class="placeholder"><b>Comments : </b>
+                                                        <?php echo $comment['comment'] ?>
+                                                    </div>
+                                                    <textarea disabled name="email" type="text" class="inputtext transparent _58mg"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                 </section>
             </div>

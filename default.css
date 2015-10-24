@@ -441,6 +441,11 @@ ol {
     right: 35px;
 }
 
+.cpvl {
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+
 .pvl {
     padding-bottom: 20px;
 }
@@ -726,4 +731,8 @@ select.ainputtext:disabled {
 
 .checkcell {
     width: 22px;
+}
+
+#comments ul {
+    list-style-type: square;
 }
