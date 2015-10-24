@@ -3,16 +3,11 @@ session_start();
 if(!empty($_SESSION["admin"]))
 {
     require_once('../database.php');
-    $rquery = "SELECT * FROM reviewer";
-    $reviewers = $db->query($rquery);
-    $uquery = "SELECT * FROM users";
-    $users = $db->query($uquery);
-    $pquery = "SELECT * FROM paper";
-    $papers = $db->query($pquery);
-    $rpquery = "SELECT reviewpapers.email, paper.paperid, paper.title, paper.file FROM reviewpapers INNER JOIN paper ON paper.paperid = reviewpapers.paperid";
-    $rpapers = $db->query($rpquery);
-    $cquery = "SELECT * FROM comments";
-    $comments = $db->query($cquery);
+    $reviewers = get_reviewers();
+    $users = get_users();
+    $papers = get_papers();
+    $rpapers = get_review_papers();
+    $comments = get_comments();
 }
 ?>
 <!DOCTYPE html>
@@ -421,32 +416,7 @@ if(!empty($_SESSION["admin"]))
                     </div>
                 </section>
             </div>
-            <div id="footer">
-                <div id="footertop">
-                    <p><strong>World Congress CS-IT Conference (WS-CSIT)</strong>
-                    <br>Hilton Hotel, Orlando, FL, USA
-                    <br>Phone: 111.111.1111 | Fax: 111.111.2222</p>
-                </div>
-                <div id="footerbottom">
-                    <ul id="footerlist">
-                        <li>
-                            <a href=""><img src="../images/facebook.png" alt="Facebook" /></a>
-                        </li>
-                        <li>
-                            <a href=""><img src="../images/linkedin.png" alt="LinkedIn" /></a>
-                        </li>
-                        <li>
-                            <a href=""><img src="../images/twitter.png" alt="Twitter" /></a>
-                        </li>
-                        <li>
-                            <a href=""><img src="../images/google.png" alt="Google" /></a>
-                        </li>
-                        <li>
-                            <a href=""><img src="../images/youtube.png" alt="Google" /></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <?php include('../footerview.php') ?>
         </div>
         <?php endif; ?>
     </body>
