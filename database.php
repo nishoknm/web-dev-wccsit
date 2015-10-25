@@ -1,9 +1,9 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=wccsit';
+    $dsn = 'mysql:host=localhost;dbname=NishokNarasimhaMohanasamy';
     $username = 'root';
     $password = '';
     $servername = "localhost";
-    $dbname = "wccsit";
+    $dbname = "NishokNarasimhaMohanasamy";
 
     $db = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection

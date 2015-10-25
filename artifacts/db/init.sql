@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `wccsit`;
-USE `wccsit`;
+CREATE DATABASE  IF NOT EXISTS `NishokNarasimhaMohanasamy`;
+USE `NishokNarasimhaMohanasamy`;
 
 
 DROP TABLE IF EXISTS `admin`;
